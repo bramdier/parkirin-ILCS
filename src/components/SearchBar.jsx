@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
-
-  const handleSearch = () => {
-    onSearch(query);
-  };
-
+const SearchBar = ({ locations, onLocationChange }) => {
   return (
-    <div className="input-group mb-4">
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Search by location or size"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button className="btn btn-outline-primary" onClick={handleSearch}>
-        Search
-      </button>
+    <div className="mb-3">
+      <label htmlFor="locationDropdown" className="form-label">
+        Select Location:
+      </label>
+      <select
+        id="locationDropdown"
+        className="form-select"
+        onChange={(e) => onLocationChange(e.target.value)}
+      >
+        <option value="">All Locations</option>
+        {locations.map((location) => (
+          <option key={location} value={location}>
+            {location}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };

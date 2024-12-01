@@ -1,26 +1,38 @@
 import React from 'react';
-import { Stage, Layer, Rect } from 'react-konva';
+import { Stage, Layer, Rect, Text } from 'react-konva';
 
 const ParkingMap = ({ parkingSlots, onSlotClick }) => {
+  const SLOT_SIZE = 50; // Ukuran setiap slot parkir
+
   return (
-    <div className="border p-3 mb-4">
-      <h5 className="text-center">Parking Map</h5>
-      <Stage width={window.innerWidth - 100} height={400}>
-        <Layer>
-          {parkingSlots.map((slot) => (
+    <Stage width={800} height={600}>
+      <Layer>
+        {parkingSlots.map((slot) => (
+          <React.Fragment key={slot.id}>
+            {/* Kotak parkir */}
             <Rect
-              key={slot.id}
               x={slot.x}
               y={slot.y}
-              width={50}
-              height={30}
+              width={SLOT_SIZE}
+              height={SLOT_SIZE}
               fill={slot.isAvailable ? 'green' : 'red'}
-              onClick={() => onSlotClick(slot)}
+              stroke="black"
+              strokeWidth={2}
+              onClick={() => slot.isAvailable && onSlotClick(slot)}
             />
-          ))}
-        </Layer>
-      </Stage>
-    </div>
+            {/* Nomor parkir */}
+            <Text
+              text={slot.slotNumber.toString()}
+              fontSize={14}
+              fill="white"
+              x={slot.x + SLOT_SIZE / 2 - 10}
+              y={slot.y + SLOT_SIZE / 2 - 10}
+              align="center"
+            />
+          </React.Fragment>
+        ))}
+      </Layer>
+    </Stage>
   );
 };
 
