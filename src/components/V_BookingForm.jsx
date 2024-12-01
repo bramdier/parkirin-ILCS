@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BookingForm = ({ onBookingSubmit }) => {
+const V_BookingForm = ({ onBookingSubmit }) => {
   const [formData, setFormData] = useState({ name: '', vehicle: '', duration: '', email: '' });
 
   const handleChange = (e) => {
@@ -13,6 +13,7 @@ const BookingForm = ({ onBookingSubmit }) => {
     onBookingSubmit(formData);
     setFormData({ name: '', vehicle: '', duration: '', email: '' });
   };
+  
 
   return (
     <div className="card p-3 mb-4">
@@ -74,4 +75,4 @@ const BookingForm = ({ onBookingSubmit }) => {
   );
 };
 
-export default BookingForm;
+export default V_BookingForm;

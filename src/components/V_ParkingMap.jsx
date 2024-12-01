@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stage, Layer, Rect, Text } from 'react-konva';
 
-const ParkingMap = ({ parkingSlots, onSlotClick }) => {
+const V_ParkingMap = ({ parkingSlots, onSlotClick }) => {
   const SLOT_SIZE = 50; // Ukuran setiap slot parkir
 
   return (
@@ -36,4 +36,4 @@ const ParkingMap = ({ parkingSlots, onSlotClick }) => {
   );
 };
 
-export default ParkingMap;
+export default V_ParkingMap;

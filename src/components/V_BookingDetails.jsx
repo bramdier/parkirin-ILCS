@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BookingDetails = ({ booking }) => {
+const V_BookingDetails = ({ booking }) => {
   if (!booking) return <p className="text-center text-muted">No booking details available</p>;
 
   return (
@@ -14,4 +14,4 @@ const BookingDetails = ({ booking }) => {
   );
 };
 
-export default BookingDetails;
+export default V_BookingDetails;

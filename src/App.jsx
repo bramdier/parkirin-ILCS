@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import ParkingMap from './components/ParkingMap';
-import BookingForm from './components/BookingForm';
-import BookingDetails from './components/BookingDetails';
-import SearchBar from './components/SearchBar';
+import ParkingMap from './components/V_ParkingMap';
+import BookingForm from './components/V_BookingForm';
+import BookingDetails from './components/V_BookingDetails';
+import SearchBar from './components/V_SearchBar';
 import { parkingSlots as initialSlots } from './utils/parkingData';
 import { generateParkingLayout } from './utils/generateParkingLayout';
+import { PCircleFill } from "react-bootstrap-icons";
 import Swal from 'sweetalert2';
 import sendEmail from './utils/sendEmail';
 
@@ -71,7 +72,7 @@ const App = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center mb-4">Parking Management System</h1>
+      <h1 className="text-center mb-4"><PCircleFill /> Parkirin System</h1>
       <SearchBar locations={uniqueLocations} onLocationChange={handleLocationChange} />
       <div className="row">
         <div className="col-md-8">

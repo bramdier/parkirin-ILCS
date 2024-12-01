@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = ({ locations, onLocationChange }) => {
+const V_SearchBar = ({ locations, onLocationChange }) => {
   return (
     <div className="mb-3">
       <label htmlFor="locationDropdown" className="form-label">
@@ -22,4 +22,4 @@ const SearchBar = ({ locations, onLocationChange }) => {
   );
 };
 
-export default SearchBar;
+export default V_SearchBar;
